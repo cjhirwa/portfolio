@@ -448,6 +448,11 @@ section .container {
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
+.progress-bar.expert { width: 90%; }
+.progress-bar.advanced { width: 75%; }
+.progress-bar.intermediate { width: 60%; }
+
+
 .counts {
   padding: 70px 0 60px;
 }

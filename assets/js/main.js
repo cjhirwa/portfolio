@@ -103,13 +103,23 @@
     });
 
     // Skills section
-    $('.skills-content').waypoint(function() {
-        $('.progress .progress-bar').each(function() {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
-        });
-    }, {
-        offset: '80%'
+    const skillLevels = {
+    expert: '90%',
+    advanced: '75%',
+    intermediate: '60%',
+    familiar: '45%'
+    };
+
+
+    $('.skills-content').waypoint(function () {
+    $('.progress .progress-bar').each(function () {
+        const level = $(this).data('level');
+        $(this).css('width', skillLevels[level]);
     });
+    }, {
+    offset: '80%'
+    });
+
 
     // Testimonials carousel (uses the Owl Carousel library)
     $(".testimonials-carousel").owlCarousel({
