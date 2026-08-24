@@ -127,6 +127,15 @@
             }
         }
 
+        .greeting {
+            font-size: 15px;
+            color: #0f9d8c;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
         .typed-cursor {
             color: #0f9d8c;
             animation: blink 0.9s step-end infinite;
@@ -135,6 +144,40 @@
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 18px;
+            padding: 7px 16px;
+            border: 1px solid rgba(15, 157, 140, 0.4);
+            border-radius: 50px;
+            background: rgba(15, 157, 140, 0.08);
+            font-size: 13px;
+            color: #eaeaea;
+            letter-spacing: 0.3px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #35e888;
+            box-shadow: 0 0 0 rgba(53, 232, 136, 0.6);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(53, 232, 136, 0.55); }
+            70% { box-shadow: 0 0 0 9px rgba(53, 232, 136, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(53, 232, 136, 0); }
         }
 
         #back-to-top {
@@ -358,8 +401,10 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header-tops">
         <div class="container">
+            <p id="greeting" class="greeting"></p>
             <h1><a href="#">Jean Claude Hirwa</a></h1>
             <h2>I'm | <span id="profession"></span><span class="typed-cursor">|</span></h2>
+            <span class="status-badge"><span class="status-dot"></span> Open to opportunities</span>
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
@@ -1085,6 +1130,13 @@
     <script data-goatcounter="https://cjhirwa.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
     <script>
+        (function () {
+            var hour = new Date().getHours();
+            var greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+            var el = document.getElementById('greeting');
+            if (el) el.textContent = greeting + ', welcome to my portfolio 👋';
+        })();
+
         (function () {
             var roles = ['AI Engineer', 'Software Engineer', 'Machine Learning Researcher', 'Builder'];
             var el = document.getElementById('profession');
