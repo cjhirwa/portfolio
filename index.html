@@ -9,14 +9,16 @@
     <meta content="Jean Claude Hirwa is a software engineer and AI researcher specializing in system architecture, cloud computing, machine learning, and data science." name="description">
     <meta content="Jean Claude Hirwa, software engineer, AI researcher, machine learning, Carnegie Mellon University, Rwanda" name="keywords">
 
+    <link rel="canonical" href="https://cjhirwa.github.io/portfolio/">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cjhirwa.github.io/portfolio/">
     <meta property="og:title" content="Jean Claude Hirwa | Software Engineer & AI Researcher">
     <meta property="og:description" content="Software engineer and AI researcher specializing in system architecture, cloud computing, machine learning, and data science.">
-    <meta property="og:image" content="assets/img/me23.jpg">
+    <meta property="og:image" content="https://cjhirwa.github.io/portfolio/assets/img/me23.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jean Claude Hirwa | Software Engineer & AI Researcher">
     <meta name="twitter:description" content="Software engineer and AI researcher specializing in system architecture, cloud computing, machine learning, and data science.">
-    <meta name="twitter:image" content="assets/img/me23.jpg">
+    <meta name="twitter:image" content="https://cjhirwa.github.io/portfolio/assets/img/me23.jpg">
 
     <link href="assets/img/me.png" rel="icon">
     <link href="assets/img/me.png" rel="apple-touch-icon">
@@ -280,7 +282,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 reveal reveal-left">
-                    <img src="assets/img/me23.jpg" class="img-fluid" alt="Jean Claude Hirwa" style="border-radius:10px;">
+                    <img src="assets/img/me23.jpg" class="img-fluid" alt="Jean Claude Hirwa" loading="lazy" style="border-radius:10px;">
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content reveal reveal-right">
                     <h3>Summary</h3>
@@ -1040,7 +1042,7 @@
                     col.className = 'col-lg-4 col-md-6 d-flex align-items-stretch mt-4 reveal in-view';
                     col.innerHTML =
                         '<div class="blog-card">' +
-                        '<img src="' + getThumbnail(item) + '" alt="' + item.title.replace(/"/g, '&quot;') + '" class="blog-card-img" onerror="this.style.display=\'none\'">' +
+                        '<img src="' + getThumbnail(item) + '" alt="' + item.title.replace(/"/g, '&quot;') + '" class="blog-card-img" loading="lazy" onerror="this.style.display=\'none\'">' +
                         '<div class="blog-card-body">' +
                         '<h4><a href="' + item.link + '" target="_blank" rel="noopener">' + item.title + '</a></h4>' +
                         '<p class="blog-card-date">' + formatDate(item.pubDate) + '</p>' +

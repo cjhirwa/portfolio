@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cjhirwa.github.io/portfolio/sitemap.xml
