@@ -23,6 +23,44 @@
     <link href="assets/img/me.png" rel="icon">
     <link href="assets/img/me.png" rel="apple-touch-icon">
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jean Claude Hirwa",
+        "url": "https://cjhirwa.github.io/portfolio/",
+        "image": "https://cjhirwa.github.io/portfolio/assets/img/me23.jpg",
+        "jobTitle": "AI Engineer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Digital Umuganda"
+        },
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "Carnegie Mellon University"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "University of Rwanda"
+            }
+        ],
+        "email": "mailto:cjhirwa@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kigali",
+            "addressCountry": "Rwanda"
+        },
+        "sameAs": [
+            "https://github.com/cjhirwa",
+            "https://www.linkedin.com/in/cjhirwa/",
+            "https://medium.com/@cjhirwa",
+            "https://orcid.org/0009-0000-9697-4034",
+            "https://twitter.com/cjhirwa"
+        ]
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,6 +238,33 @@
             transition: opacity 0.25s ease;
         }
 
+        .skip-link {
+            position: absolute;
+            top: -60px;
+            left: 10px;
+            background: #0f9d8c;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            z-index: 2000;
+            text-decoration: none;
+            font-family: "Sora", sans-serif;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 10px;
+            color: #fff;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        #back-to-top:focus-visible {
+            outline: 2px solid #0f9d8c;
+            outline-offset: 3px;
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(24px);
@@ -237,6 +302,8 @@
 
 <body>
 
+    <a href="#about" class="skip-link">Skip to main content</a>
+
     <a href="#header" id="back-to-top" title="Back to top" aria-label="Back to top"><i class="icofont-arrow-up"></i></a>
 
     <!-- ======= Header ======= -->
@@ -262,13 +329,13 @@
             <!-- .nav-menu -->
 
             <div class="social-links">
-                <a href="https://orcid.org/0009-0000-9697-4034" title="ORCID" class="orcid" target="_blank"><i class="icofont-ebook"></i></a>
-                <a href="https://www.github.com/cjhirwa/" title="Github" class="github" target="_blank"><i class="icofont-terminal"></i></a>
-                <a href="mailto:cjhirwa@gmail.com" title="Gmail" class="gmail" target="_blank"><i class="icofont-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/cjhirwa/" title="LinkedIn" class="linkedin" target="_blank"><i class="icofont-linkedin"></i></a>
-                <a href="https://medium.com/@cjhirwa" title="Medium" class="medium" target="_blank"><i class="icofont-newspaper"></i></a>
-                <a href="https://wa.me/+250788230853" title="WhatsApp" class="watsapp" target="_blank"><i class="icofont-whatsapp"></i></a>
-                <a href="tel:+250788230853" title="Call" class="call" target="_blank"><i class="icofont-phone"></i></a>
+                <a href="https://orcid.org/0009-0000-9697-4034" title="ORCID" aria-label="ORCID" class="orcid" target="_blank"><i class="icofont-ebook"></i></a>
+                <a href="https://www.github.com/cjhirwa/" title="Github" aria-label="GitHub" class="github" target="_blank"><i class="icofont-terminal"></i></a>
+                <a href="mailto:cjhirwa@gmail.com" title="Gmail" aria-label="Email" class="gmail" target="_blank"><i class="icofont-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/cjhirwa/" title="LinkedIn" aria-label="LinkedIn" class="linkedin" target="_blank"><i class="icofont-linkedin"></i></a>
+                <a href="https://medium.com/@cjhirwa" title="Medium" aria-label="Medium" class="medium" target="_blank"><i class="icofont-newspaper"></i></a>
+                <a href="https://wa.me/+250788230853" title="WhatsApp" aria-label="WhatsApp" class="watsapp" target="_blank"><i class="icofont-whatsapp"></i></a>
+                <a href="tel:+250788230853" title="Call" aria-label="Call" class="call" target="_blank"><i class="icofont-phone"></i></a>
             </div>
         </div>
     </header>
@@ -675,7 +742,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-file"></i></div>
-                        <h4><a href="">Web development</a></h4>
+                        <h4>Web development</h4>
                         <p>I build websites from scratch or modernize existing ones by updating technologies and design.</p>
                     </div>
                 </div>
@@ -683,35 +750,35 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-slideshow"></i></div>
-                        <h4><a href="">Management System Development</a></h4>
+                        <h4>Management System Development</h4>
                         <p>Stock management systems, school management systems, rental management systems, and more.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-tachometer"></i></div>
-                        <h4><a href="">Database Development</a></h4>
+                        <h4>Database Development</h4>
                         <p>I specialize in building databases from the ground up and rejuvenating existing databases by implementing advanced technologies and enhancing their design.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-mobile"></i></div>
-                        <h4><a href="">Mobile Development</a></h4>
+                        <h4>Mobile Development</h4>
                         <p>I specialize in crafting mobile applications from inception to completion, leveraging cutting-edge technologies to rejuvenate existing apps and enhance their design. My expertise lies in creating seamless and innovative mobile experiences, whether building applications from scratch or revitalizing existing ones through the implementation of advanced mobile development techniques.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-clipboard"></i></div>
-                        <h4><a href="">AI Models</a></h4>
+                        <h4>AI Models</h4>
                         <p>I specialize in developing AI models that drive innovation in different applications. From conceptualization to deployment, I leverage advanced technologies to create intelligent and adaptive features. Whether building AI-powered applications from the ground up or enhancing existing ones, I am dedicated to pushing the boundaries of development through the implementation of sophisticated AI models and algorithms.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-user"></i></div>
-                        <h4><a href="">Consultancy</a></h4>
+                        <h4>Consultancy</h4>
                         <p>I specialize in providing strategic consultancy services for companies, offering expertise in optimizing projects from conception to execution. Whether advising on the integration of cutting-edge technologies, guiding teams through the development lifecycle, or revitalizing existing solutions, I bring a wealth of experience to deliver tailored consultancy that ensures success in the ever-evolving landscape of technology.</p>
                     </div>
                 </div>
@@ -738,7 +805,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 project-item">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-cog"></i></div>
-                        <h4><a href="#">SkyNet - Intelligent Business Management</a></h4>
+                        <h4>SkyNet - Intelligent Business Management</h4>
                         <p>An integrated platform that automates inventory, invoicing, and performance tracking using AI-driven insights to streamline business operations.</p>
                     </div>
                 </div>
@@ -746,7 +813,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 project-item">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-brain"></i></div>
-                        <h4><a href="#">AI-Powered Customer Support Bot</a></h4>
+                        <h4>AI-Powered Customer Support Bot</h4>
                         <p>A natural language processing chatbot using Python and Transformer models to automate customer support and reduce response time by 60%.</p>
                     </div>
                 </div>
@@ -754,7 +821,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 project-item">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-line-chart"></i></div>
-                        <h4><a href="#">Real-Time Stock Prediction System</a></h4>
+                        <h4>Real-Time Stock Prediction System</h4>
                         <p>A machine learning system to predict stock price trends using time-series analysis and streaming data from financial APIs.</p>
                     </div>
                 </div>
@@ -762,7 +829,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-analyse"></i></div>
-                        <h4><a href="#">Business Analytics Dashboard</a></h4>
+                        <h4>Business Analytics Dashboard</h4>
                         <p>An interactive dashboard for businesses to visualize sales, customer trends, and operational KPIs using modern data visualization tools.</p>
                     </div>
                 </div>
@@ -770,7 +837,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-health"></i></div>
-                        <h4><a href="#">Ophthalmology Image Translation</a></h4>
+                        <h4>Ophthalmology Image Translation</h4>
                         <p>AI-based project at the <strong>University of Rwanda</strong> translating ophthalmology images into medical insights to aid diagnosis.</p>
                     </div>
                 </div>
@@ -778,7 +845,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-building-house"></i></div>
-                        <h4><a href="#">Hotel Reservation System</a></h4>
+                        <h4>Hotel Reservation System</h4>
                         <p>An online platform for hotel booking, room management, and customer communications for the hospitality sector.</p>
                     </div>
                 </div>
@@ -786,7 +853,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-book-content"></i></div>
-                        <h4><a href="#">STUMIS</a></h4>
+                        <h4>STUMIS</h4>
                         <p>Developed at <strong><a href="https://itec.rw" target="_blank">ITEC Ltd</a></strong>, helping institutions manage student records, grading, and attendance effectively.</p>
                     </div>
                 </div>
@@ -794,7 +861,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-credit-card"></i></div>
-                        <h4><a href="#">ITECPAY</a></h4>
+                        <h4>ITECPAY</h4>
                         <p>A payment solution built at <strong><a href="https://itec.rw" target="_blank">ITEC Ltd</a></strong>, facilitating transactions for businesses and individuals.</p>
                     </div>
                 </div>
@@ -802,7 +869,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-restaurant"></i></div>
-                        <h4><a href="#">SMART-SERVE</a></h4>
+                        <h4>SMART-SERVE</h4>
                         <p>Comprehensive restaurant operations system developed at <strong><a href="https://itec.rw" target="_blank">ITEC Ltd</a></strong> to streamline ordering, billing, and inventory management.</p>
                     </div>
                 </div>
@@ -854,11 +921,11 @@
                         <h3>Connect</h3>
                         <div class="social-links">
                             
-                            <a href="https://github.com/cjhirwa" class="github"><i class="icofont-github"></i></a>
-                            <a href="https://twitter.com/cjhirwa" class="twitter"><i class="icofont-twitter"></i></a>
-                            <a href="https://www.instagram.com/cjhirwa" class="instagram"><i class="icofont-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/cjhirwa/" class="linkedin"><i class="icofont-linkedin"></i></a>
-                            <a href="https://medium.com/@cjhirwa" class="medium"><i class="icofont-newspaper"></i></a>
+                            <a href="https://github.com/cjhirwa" class="github" aria-label="GitHub"><i class="icofont-github"></i></a>
+                            <a href="https://twitter.com/cjhirwa" class="twitter" aria-label="Twitter"><i class="icofont-twitter"></i></a>
+                            <a href="https://www.instagram.com/cjhirwa" class="instagram" aria-label="Instagram"><i class="icofont-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/cjhirwa/" class="linkedin" aria-label="LinkedIn"><i class="icofont-linkedin"></i></a>
+                            <a href="https://medium.com/@cjhirwa" class="medium" aria-label="Medium"><i class="icofont-newspaper"></i></a>
 
 
                         </div>
