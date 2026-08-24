@@ -238,6 +238,67 @@
             transition: opacity 0.25s ease;
         }
 
+        #contact-form .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid rgba(204, 204, 204, 0.25);
+            background: rgba(204, 204, 204, 0.06);
+            color: #fff;
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        #contact-form .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        #contact-form .form-control:focus {
+            border-color: #0f9d8c;
+            background: rgba(204, 204, 204, 0.1);
+        }
+
+        #contact-form textarea.form-control {
+            resize: vertical;
+        }
+
+        #contact-form-submit {
+            padding: 12px 36px;
+            border-radius: 6px;
+            border: none;
+            background: #0f9d8c;
+            color: #fff;
+            font-weight: 500;
+            font-family: "Sora", sans-serif;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #contact-form-submit:hover:not(:disabled) {
+            background: #35e888;
+        }
+
+        #contact-form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #contact-form-status {
+            margin-bottom: 14px;
+            font-size: 14px;
+        }
+
+        #contact-form-status.success {
+            color: #35e888;
+        }
+
+        #contact-form-status.error {
+            color: #ff6b6b;
+        }
+
         .demo-link {
             display: inline-block;
             margin-top: 14px;
@@ -976,6 +1037,30 @@
                 </div>
             </div>
 
+            <div class="row mt-4">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contact-form" class="reveal">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="from_name" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" name="from_email" class="form-control" id="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="6" id="message" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="text-center mt-3">
+                            <div id="contact-form-status"></div>
+                            <button type="submit" id="contact-form-submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -992,6 +1077,42 @@
     <script src="assets/vendor/venobox/venobox.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/magic.js"></script>
+
+    <!-- EmailJS (Contact form) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init({ publicKey: '_mu1jxaF8rFrdsY28' });
+
+            var form = document.getElementById('contact-form');
+            var status = document.getElementById('contact-form-status');
+            var submitBtn = document.getElementById('contact-form-submit');
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending…';
+                status.textContent = '';
+                status.className = '';
+
+                emailjs.sendForm('service_5d94oky', 'template_p6anjxd', form)
+                    .then(function () {
+                        status.textContent = "Thanks! Your message has been sent — I'll get back to you soon.";
+                        status.className = 'success';
+                        form.reset();
+                    })
+                    .catch(function () {
+                        status.textContent = "Something went wrong. Please email me directly at cjhirwa@gmail.com.";
+                        status.className = 'error';
+                    })
+                    .finally(function () {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                    });
+            });
+        })();
+    </script>
 
     <!-- Analytics (GoatCounter, privacy-friendly) -->
     <script data-goatcounter="https://cjhirwa.goatcounter.com/count"
