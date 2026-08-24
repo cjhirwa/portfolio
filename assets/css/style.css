@@ -658,6 +658,15 @@ section .container {
   margin-top: -2px;
   border-left: 2px solid rgba(255, 255, 255, 0.2);
   position: relative;
+  transition: transform 0.3s ease;
+}
+
+.resume .resume-item:hover {
+  transform: translateX(6px);
+}
+
+.resume .resume-item:hover h5 {
+  background: rgba(15, 157, 140, 0.25);
 }
 
 .resume .resume-item h4 {
@@ -701,6 +710,12 @@ section .container {
   top: 0;
   background: #0f9d8c;
   border: 2px solid #0f9d8c;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.resume .resume-item:hover::before {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(15, 157, 140, 0.18);
 }
 
 /*--------------------------------------------------------------

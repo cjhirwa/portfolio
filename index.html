@@ -151,6 +151,43 @@
             background: #35e888;
             color: #040404;
         }
+
+        .project-search-wrap {
+            max-width: 420px;
+            margin: 0 auto 10px auto;
+            text-align: center;
+        }
+
+        #project-search {
+            width: 100%;
+            padding: 12px 18px;
+            border-radius: 6px;
+            border: 1px solid rgba(204, 204, 204, 0.25);
+            background: rgba(204, 204, 204, 0.06);
+            color: #fff;
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        #project-search::placeholder {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        #project-search:focus {
+            border-color: #0f9d8c;
+            background: rgba(204, 204, 204, 0.1);
+        }
+
+        #project-search-empty {
+            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .project-item {
+            transition: opacity 0.25s ease;
+        }
     </style>
 
 <!-- =======================================================
@@ -653,8 +690,13 @@
                 <h4>Here are some of the key projects I have worked on.</h4>
             </div>
 
-            <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="project-search-wrap">
+                <input type="text" id="project-search" placeholder="Search projects by keyword…" aria-label="Search projects">
+                <p id="project-search-empty" style="display:none;">No projects match your search.</p>
+            </div>
+
+            <div class="row" id="projects-grid">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 project-item">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-cog"></i></div>
                         <h4><a href="#">SkyNet - Intelligent Business Management</a></h4>
@@ -662,7 +704,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 project-item">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-brain"></i></div>
                         <h4><a href="#">AI-Powered Customer Support Bot</a></h4>
@@ -670,7 +712,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 project-item">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-line-chart"></i></div>
                         <h4><a href="#">Real-Time Stock Prediction System</a></h4>
@@ -678,7 +720,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-analyse"></i></div>
                         <h4><a href="#">Business Analytics Dashboard</a></h4>
@@ -686,7 +728,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-health"></i></div>
                         <h4><a href="#">Ophthalmology Image Translation</a></h4>
@@ -694,7 +736,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-building-house"></i></div>
                         <h4><a href="#">Hotel Reservation System</a></h4>
@@ -702,7 +744,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-book-content"></i></div>
                         <h4><a href="#">STUMIS</a></h4>
@@ -710,7 +752,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-credit-card"></i></div>
                         <h4><a href="#">ITECPAY</a></h4>
@@ -718,7 +760,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-restaurant"></i></div>
                         <h4><a href="#">SMART-SERVE</a></h4>
@@ -850,6 +892,23 @@
                 setTimeout(tick, deleting ? 40 : 90);
             }
             tick();
+        })();
+
+        (function () {
+            var input = document.getElementById('project-search');
+            var items = document.querySelectorAll('#projects-grid .project-item');
+            var emptyMsg = document.getElementById('project-search-empty');
+            if (!input) return;
+            input.addEventListener('input', function () {
+                var q = input.value.trim().toLowerCase();
+                var visibleCount = 0;
+                items.forEach(function (item) {
+                    var match = item.textContent.toLowerCase().indexOf(q) !== -1;
+                    item.style.display = match ? '' : 'none';
+                    if (match) visibleCount++;
+                });
+                emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+            });
         })();
 
         (function () {
