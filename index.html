@@ -1179,6 +1179,24 @@
         })();
 
         (function () {
+            document.addEventListener('click', function (e) {
+                var link = e.target.closest('a[href^="#"]');
+                if (!link) return;
+                var hash = link.getAttribute('href');
+                if (hash.length < 2) return;
+                var target = document.querySelector(hash);
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (history.pushState) {
+                    history.pushState(null, '', hash);
+                } else {
+                    location.hash = hash;
+                }
+            });
+        })();
+
+        (function () {
             var navLinks = document.querySelectorAll('.nav-menu ul li a[href^="#"]');
             var sections = [];
             navLinks.forEach(function (a) {
