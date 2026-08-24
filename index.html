@@ -9,6 +9,15 @@
     <meta content="Jean Claude Hirwa is a software engineer and AI researcher specializing in system architecture, cloud computing, machine learning, and data science." name="description">
     <meta content="Jean Claude Hirwa, software engineer, AI researcher, machine learning, Carnegie Mellon University, Rwanda" name="keywords">
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jean Claude Hirwa | Software Engineer & AI Researcher">
+    <meta property="og:description" content="Software engineer and AI researcher specializing in system architecture, cloud computing, machine learning, and data science.">
+    <meta property="og:image" content="assets/img/me23.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jean Claude Hirwa | Software Engineer & AI Researcher">
+    <meta name="twitter:description" content="Software engineer and AI researcher specializing in system architecture, cloud computing, machine learning, and data science.">
+    <meta name="twitter:image" content="assets/img/me23.jpg">
+
     <link href="assets/img/me.png" rel="icon">
     <link href="assets/img/me.png" rel="apple-touch-icon">
 
@@ -188,6 +197,34 @@
         .project-item {
             transition: opacity 0.25s ease;
         }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.reveal-left {
+            transform: translateX(-30px);
+        }
+
+        .reveal.reveal-right {
+            transform: translateX(30px);
+        }
+
+        .reveal.in-view {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
     </style>
 
 <!-- =======================================================
@@ -238,14 +275,14 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
         <div class="about-me container">
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>About</h2>
             </div>
             <div class="row">
-                <div class="col-lg-4" data-aos="fade-right">
+                <div class="col-lg-4 reveal reveal-left">
                     <img src="assets/img/me23.jpg" class="img-fluid" alt="Jean Claude Hirwa" style="border-radius:10px;">
                 </div>
-                <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                <div class="col-lg-8 pt-4 pt-lg-0 content reveal reveal-right">
                     <h3>Summary</h3>
                     <p class="font-italic">
                         I am a passionate and skilled software Engineer with over 4 years of experience and AI expertise, specializing in system architecture, cloud computing, machine learning, and data science. Proven track record in designing scalable applications, such as payment systems and enterprise tools. Skilled in full-stack and mobile development, database management, AI integration, and performance optimization.
@@ -309,7 +346,7 @@
 
         <!-- ======= Skills ======= -->
         <div class="skills container">
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>Skills</h2>
             </div>
 
@@ -528,31 +565,31 @@
         <!-- ======= Interests ======= -->
         <div class="interests container">
 
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>Interests</h2>
             </div>
 
             <div class="row">
                 <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <i class="ri-base-station-line" style="color: #29cc61;"></i>
                         <h3>Systems</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 mt-4 ">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <i class="ri-refresh-line" style="color: #29cc61;"></i>
                         <h3>Automation</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <i class="ri-bar-chart-box-line" style="color: #29cc61;"></i>
                         <h3>Business</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <i class="ri-book-line" style="color: #29cc61;"></i>
                         <h3>Learning</h3>
                     </div>
@@ -568,7 +605,7 @@
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>Resume</h2>
             </div>
             <div class="text-center mb-4">
@@ -577,13 +614,13 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h3 class="resume-title">Education</h3>
-                    <div class="resume-item">
+                    <div class="resume-item reveal">
                         <h4>Carnegie Mellon University</h4>
                         <h5>Master of Science in Engineering Artificial Intelligence | Aug. 2024 - May 2026</h5>
                         <p>Focuses on advanced machine learning, deep learning, and intelligent systems engineering, with applications in natural language processing and computer vision. Engages in research projects that bridge theoretical AI foundations with practical, industry-relevant deployments.</p>
                         <p>GPA: 3.87/4.0</p>
                     </div>
-                    <div class="resume-item">
+                    <div class="resume-item reveal">
                         <h4> (University of Rwanda)</h4>
                         <h5>Bachelor of Science with honors in Computer Engineering: Software Engineering | Nov. 2019 - Oct. 2024</h5>
                         <p>Specialized in software engineering, and distributed systems.  Completed a final-year capstone project on scalable AI-powered solutions, focusing on <em>ophthalmology image translation</em> to support medical imaging and diagnostics. The project combined deep learning techniques, computer vision, and cloud deployment for scalability.</p>
@@ -593,12 +630,12 @@
                 </div>
                 <div class="col-lg-6">
                     <h3 class="resume-title">PROFESSIONAL EXPERIENCE</h3>
-                    <div class="resume-item">
+                    <div class="resume-item reveal">
                         <h4>Digital Umuganda</h4>
                         <h5>AI Engineer | Jul. 2026 - Present</h5>
                         <p>Working on AI engineering initiatives, building and deploying machine learning and AI-driven solutions.</p>
                     </div>
-                    <div class="resume-item">
+                    <div class="resume-item reveal">
                         <h4>Carnegie Mellon University</h4>
 
                         <h5>Teaching Assistant, Agentic AI | Jan. 2026 - May 2026</h5>
@@ -612,7 +649,7 @@
                         <h5>Summer Intern | Jun. 2025 - Aug. 2025</h5>
                         <p>Developed automation workflows and analytics dashboards for CMU-Africa's operations. Applied AI techniques to streamline business processes, enhance reporting accuracy, and support strategic decision-making.</p>
                     </div>
-                    <div class="resume-item">
+                    <div class="resume-item reveal">
                         <h4>ITEC Ltd, Rwanda</h4>
                         <h5>Software Engineer | Jan. 2023 - Sep. 2024</h5>
                         <p>Designed, implemented, and maintained enterprise software applications, enhancing system stability and backend efficiency.</p>
@@ -634,7 +671,7 @@
 
             <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-file"></i></div>
                         <h4><a href="">Web development</a></h4>
                         <p>I build websites from scratch or modernize existing ones by updating technologies and design.</p>
@@ -642,35 +679,35 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-slideshow"></i></div>
                         <h4><a href="">Management System Development</a></h4>
                         <p>Stock management systems, school management systems, rental management systems, and more.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-tachometer"></i></div>
                         <h4><a href="">Database Development</a></h4>
                         <p>I specialize in building databases from the ground up and rejuvenating existing databases by implementing advanced technologies and enhancing their design.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-mobile"></i></div>
                         <h4><a href="">Mobile Development</a></h4>
                         <p>I specialize in crafting mobile applications from inception to completion, leveraging cutting-edge technologies to rejuvenate existing apps and enhance their design. My expertise lies in creating seamless and innovative mobile experiences, whether building applications from scratch or revitalizing existing ones through the implementation of advanced mobile development techniques.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-clipboard"></i></div>
                         <h4><a href="">AI Models</a></h4>
                         <p>I specialize in developing AI models that drive innovation in different applications. From conceptualization to deployment, I leverage advanced technologies to create intelligent and adaptive features. Whether building AI-powered applications from the ground up or enhancing existing ones, I am dedicated to pushing the boundaries of development through the implementation of sophisticated AI models and algorithms.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-user"></i></div>
                         <h4><a href="">Consultancy</a></h4>
                         <p>I specialize in providing strategic consultancy services for companies, offering expertise in optimizing projects from conception to execution. Whether advising on the integration of cutting-edge technologies, guiding teams through the development lifecycle, or revitalizing existing solutions, I bring a wealth of experience to deliver tailored consultancy that ensures success in the ever-evolving landscape of technology.</p>
@@ -685,7 +722,7 @@
     <section id="projects" class="services">
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>Projects</h2>
                 <h4>Here are some of the key projects I have worked on.</h4>
             </div>
@@ -697,7 +734,7 @@
 
             <div class="row" id="projects-grid">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 project-item">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-cog"></i></div>
                         <h4><a href="#">SkyNet - Intelligent Business Management</a></h4>
                         <p>An integrated platform that automates inventory, invoicing, and performance tracking using AI-driven insights to streamline business operations.</p>
@@ -705,7 +742,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 project-item">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-brain"></i></div>
                         <h4><a href="#">AI-Powered Customer Support Bot</a></h4>
                         <p>A natural language processing chatbot using Python and Transformer models to automate customer support and reduce response time by 60%.</p>
@@ -713,7 +750,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 project-item">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-line-chart"></i></div>
                         <h4><a href="#">Real-Time Stock Prediction System</a></h4>
                         <p>A machine learning system to predict stock price trends using time-series analysis and streaming data from financial APIs.</p>
@@ -721,7 +758,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-analyse"></i></div>
                         <h4><a href="#">Business Analytics Dashboard</a></h4>
                         <p>An interactive dashboard for businesses to visualize sales, customer trends, and operational KPIs using modern data visualization tools.</p>
@@ -729,7 +766,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-health"></i></div>
                         <h4><a href="#">Ophthalmology Image Translation</a></h4>
                         <p>AI-based project at the <strong>University of Rwanda</strong> translating ophthalmology images into medical insights to aid diagnosis.</p>
@@ -737,7 +774,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-building-house"></i></div>
                         <h4><a href="#">Hotel Reservation System</a></h4>
                         <p>An online platform for hotel booking, room management, and customer communications for the hospitality sector.</p>
@@ -745,7 +782,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-book-content"></i></div>
                         <h4><a href="#">STUMIS</a></h4>
                         <p>Developed at <strong><a href="https://itec.rw" target="_blank">ITEC Ltd</a></strong>, helping institutions manage student records, grading, and attendance effectively.</p>
@@ -753,7 +790,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-credit-card"></i></div>
                         <h4><a href="#">ITECPAY</a></h4>
                         <p>A payment solution built at <strong><a href="https://itec.rw" target="_blank">ITEC Ltd</a></strong>, facilitating transactions for businesses and individuals.</p>
@@ -761,7 +798,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 project-item">
-                    <div class="icon-box">
+                    <div class="icon-box reveal">
                         <div class="icon"><i class="bx bx-restaurant"></i></div>
                         <h4><a href="#">SMART-SERVE</a></h4>
                         <p>Comprehensive restaurant operations system developed at <strong><a href="https://itec.rw" target="_blank">ITEC Ltd</a></strong> to streamline ordering, billing, and inventory management.</p>
@@ -776,7 +813,7 @@
     <section id="blog" class="services">
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>Blog</h2>
                 <h4>Recent posts from my <a href="https://medium.com/@cjhirwa" target="_blank" rel="noopener">Medium</a> page.</h4>
             </div>
@@ -795,14 +832,14 @@
     <section id="contact" class="contact">
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>Contact</h2>
             </div>
 
             <div class="row mt-2">
 
                 <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="info-box">
+                    <div class="info-box reveal">
                         <i class="bx bx-map"></i>
                         <h3>Address</h3>
                         <p>Kigali, Rwanda</p>
@@ -810,7 +847,7 @@
                 </div>
 
                 <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-                    <div class="info-box">
+                    <div class="info-box reveal">
                         <i class="bx bx-link"></i>
                         <h3>Connect</h3>
                         <div class="social-links">
@@ -827,14 +864,14 @@
                 </div>
 
                 <div class="col-md-6 mt-4 d-flex align-items-stretch">
-                    <div class="info-box">
+                    <div class="info-box reveal">
                         <i class="bx bx-envelope"></i>
                         <h3>Mail</h3>
                         <p>cjhirwa@gmail.com</p>
                     </div>
                 </div>
                 <div class="col-md-6 mt-4 d-flex align-items-stretch">
-                    <div class="info-box">
+                    <div class="info-box reveal">
                         <i class="bx bx-phone-call"></i>
                         <h3>Call</h3>
                         <p>+250 788 230 853</p>
@@ -892,6 +929,51 @@
                 setTimeout(tick, deleting ? 40 : 90);
             }
             tick();
+        })();
+
+        (function () {
+            if (!('IntersectionObserver' in window)) {
+                document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
+                return;
+            }
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+            function observeAll() {
+                document.querySelectorAll('.reveal:not(.in-view)').forEach(function (el) {
+                    observer.observe(el);
+                });
+            }
+            observeAll();
+            window.revealObserveAll = observeAll;
+        })();
+
+        (function () {
+            var navLinks = document.querySelectorAll('.nav-menu ul li a[href^="#"]');
+            var sections = [];
+            navLinks.forEach(function (a) {
+                var id = a.getAttribute('href').slice(1);
+                var section = document.getElementById(id);
+                if (section) sections.push({ id: id, el: section, link: a.parentElement });
+            });
+
+            function onScroll() {
+                var scrollPos = window.scrollY + window.innerHeight * 0.3;
+                var current = sections[0];
+                sections.forEach(function (s) {
+                    if (s.el.offsetTop <= scrollPos) current = s;
+                });
+                sections.forEach(function (s) { s.link.classList.remove('active'); });
+                if (current) current.link.classList.add('active');
+            }
+            window.addEventListener('scroll', onScroll);
+            onScroll();
         })();
 
         (function () {
@@ -955,7 +1037,7 @@
                 container.innerHTML = '';
                 items.slice(0, MAX_POSTS).forEach(function (item) {
                     var col = document.createElement('div');
-                    col.className = 'col-lg-4 col-md-6 d-flex align-items-stretch mt-4';
+                    col.className = 'col-lg-4 col-md-6 d-flex align-items-stretch mt-4 reveal in-view';
                     col.innerHTML =
                         '<div class="blog-card">' +
                         '<img src="' + getThumbnail(item) + '" alt="' + item.title.replace(/"/g, '&quot;') + '" class="blog-card-img" onerror="this.style.display=\'none\'">' +
