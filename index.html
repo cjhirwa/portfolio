@@ -86,9 +86,11 @@
             overflow: hidden;
             transition: transform 0.3s ease, background 0.3s ease;
         }
-        .blog-card:hover {
-            transform: translateY(-6px);
-            background: rgba(204, 204, 204, 0.16);
+        @media (hover: hover) and (pointer: fine) {
+            .blog-card:hover {
+                transform: translateY(-6px);
+                background: rgba(204, 204, 204, 0.16);
+            }
         }
         .blog-card-img {
             width: 100%;

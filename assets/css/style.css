@@ -661,12 +661,14 @@ section .container {
   transition: transform 0.3s ease;
 }
 
-.resume .resume-item:hover {
-  transform: translateX(6px);
-}
+@media (hover: hover) and (pointer: fine) {
+  .resume .resume-item:hover {
+    transform: translateX(6px);
+  }
 
-.resume .resume-item:hover h5 {
-  background: rgba(15, 157, 140, 0.25);
+  .resume .resume-item:hover h5 {
+    background: rgba(15, 157, 140, 0.25);
+  }
 }
 
 .resume .resume-item h4 {
@@ -766,18 +768,20 @@ section .container {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.services .icon-box:hover {
-  transform: translateY(-6px);
-  background: rgba(204, 204, 204, 0.1);
-  border-color: #0f9d8c;
-}
+@media (hover: hover) and (pointer: fine) {
+  .services .icon-box:hover {
+    transform: translateY(-6px);
+    background: rgba(204, 204, 204, 0.1);
+    border-color: #0f9d8c;
+  }
 
-.services .icon-box:hover .icon {
-  background: #0f9d8c;
-}
+  .services .icon-box:hover .icon {
+    background: #0f9d8c;
+  }
 
-.services .icon-box:hover .icon i {
-  color: #fff;
+  .services .icon-box:hover .icon i {
+    color: #fff;
+  }
 }
 
 /*--------------------------------------------------------------
